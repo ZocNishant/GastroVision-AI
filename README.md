@@ -1,5 +1,21 @@
 # GastroVision: AI-Powered Gastrointestinal Disease Classification
 
+<div align="center">
+
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red?logo=pytorch&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)
+![Accuracy](https://img.shields.io/badge/Accuracy-96.11%25-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+**Deep learning system for automated classification of gastrointestinal conditions**
+
+[Demo](#-quick-start) • [Results](#-results) • [Models](MODELS.md) • [Paper](#)
+
+</div>
+
+# GastroVision: AI-Powered Gastrointestinal Disease Classification
+
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red)
 ![Docker](https://img.shields.io/badge/Docker-Ready-brightgreen)
@@ -16,17 +32,20 @@ Deep learning system for automated classification of gastrointestinal conditions
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Docker installed ([Get Docker](https://docs.docker.com/get-docker/))
 
 ### Installation
 
 1. Clone repository:
+
 ```bash
 git clone <your-repo-url>
 cd GastroVision_Docker
 ```
 
 2. Build Docker image:
+
 ```bash
 docker build -t gastrovision:latest .
 ```
@@ -36,16 +55,19 @@ docker build -t gastrovision:latest .
 **Run prediction on single image:**
 
 Mac/Linux:
+
 ```bash
 ./run_prediction.sh test_images/Colon_polyps/image.jpg
 ```
 
 Windows:
+
 ```batch
 run_prediction.bat test_images\Colon_polyps\image.jpg
 ```
 
 **Manual Docker command:**
+
 ```bash
 docker run --rm \
     -v "$(pwd)/test_images:/app/test_images" \
@@ -56,15 +78,16 @@ docker run --rm \
 ## 📊 Model Architecture
 
 ### Ensemble Approach
+
 - **Model 1:** EfficientNet-B3 (94.27% accuracy)
   - Weight: 40%
   - Strength: Efficient CNN architecture
-  
 - **Model 2:** Vision Transformer (95.50% accuracy)
   - Weight: 60%
   - Strength: Global attention mechanism
 
 ### Training Details
+
 - **Dataset:** GastroVision (2,442 images)
 - **Split:** 80% train, 20% validation
 - **Augmentation:** Rotation, flipping, color jitter
@@ -72,6 +95,7 @@ docker run --rm \
 - **Optimizer:** Adam with learning rate scheduling
 
 ## 📁 Project Structure
+
 ```
 GastroVision_Docker/
 ├── models/                          # Trained model weights
@@ -92,33 +116,35 @@ GastroVision_Docker/
 
 ### Per-Class Performance
 
-| Class | Precision | Recall | F1-Score | Support |
-|-------|-----------|--------|----------|---------|
-| Colon polyps | 96.1% | 90.2% | 93.8% | 164 |
-| Erythema | 100.0% | 33.3% | 50.0% | 3 |
-| Normal esophagus | 100.0% | 100.0% | 100.0% | 28 |
-| Normal mucosa | 94.7% | 98.0% | 96.3% | 294 |
+| Class            | Precision | Recall | F1-Score | Support |
+| ---------------- | --------- | ------ | -------- | ------- |
+| Colon polyps     | 96.1%     | 90.2%  | 93.8%    | 164     |
+| Erythema         | 100.0%    | 33.3%  | 50.0%    | 3       |
+| Normal esophagus | 100.0%    | 100.0% | 100.0%   | 28      |
+| Normal mucosa    | 94.7%     | 98.0%  | 96.3%    | 294     |
 
 **Overall Accuracy:** 96.11%
 
 ### Model Comparison
 
-| Model | Accuracy |
-|-------|----------|
-| ResNet-50 (Baseline) | 68.92% |
-| EfficientNet-B3 | 94.27% |
-| EfficientNet-B4 | 93.66% |
-| Vision Transformer | 95.50% |
+| Model                | Accuracy   |
+| -------------------- | ---------- |
+| ResNet-50 (Baseline) | 68.92%     |
+| EfficientNet-B3      | 94.27%     |
+| EfficientNet-B4      | 93.66%     |
+| Vision Transformer   | 95.50%     |
 | **Ensemble (Final)** | **96.11%** |
 
 ## 🎓 Technical Details
 
 ### Interpretability
+
 - Grad-CAM visualizations show model focuses on clinically relevant regions
 - Polyps: Localized attention on lesion areas
 - Erythema: Diffuse attention on inflamed tissue
 
 ### Validation
+
 - Stability: 0% variance across runs
 - Calibration: 2.7% error (excellent)
 - Model is well-calibrated and reliable
@@ -126,6 +152,7 @@ GastroVision_Docker/
 ## 👨‍💻 Author
 
 **Nishant Joshi**
+
 - University of South Dakota
 - Machine Learning Fundamentals - Final Project
 - Date: December 2024
