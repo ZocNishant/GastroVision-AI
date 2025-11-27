@@ -1,0 +1,29 @@
+# Model files
+models/*.pth
+models/*.pt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Test files (optional - can include some samples)
+# test_images/
+
+# Docker
+.dockerignore
